@@ -33,10 +33,9 @@ parser.add_argument('--weight-decay', type=float, default=3e-4, help='weight dec
 parser.add_argument('--drop_path_prob', type=float, default=0.2, help='drop path probability')
 parser.add_argument('--print_freq', type=int, default=100, help='print frequency of training')
 parser.add_argument('--val_interval', type=int, default=5, help='validate and save frequency')
-parser.add_argument('--tissue_dir', type=str, default='./tissue_model/cell3/', help='Tissue direction')
 parser.add_argument('--seed', type=int, default=0, help='training seed')
 # Dataset Settings
-parser.add_argument('--data_root', type=str, default='/home/l708/Code/NAS/dataset/', help='dataset dir')
+parser.add_argument('--data_root', type=str, default='/dataset/', help='dataset dir')
 parser.add_argument('--classes', type=int, default=10, help='dataset classes')
 parser.add_argument('--dataset', type=str, default='cifar100', help='path to the dataset')
 parser.add_argument('--auxiliary', action='store_true', default=True, help='use auxiliary tower')
