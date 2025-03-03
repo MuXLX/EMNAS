@@ -39,7 +39,6 @@ parser.add_argument('--momentum', type=float, default=0.9, help='momentum')
 parser.add_argument('--weight-decay', type=float, default=3e-4, help='weight decay')
 parser.add_argument('--print_freq', type=int, default=100, help='print frequency of training')
 parser.add_argument('--val_interval', type=int, default=5, help='validate and save frequency')
-parser.add_argument('--tissue_dir', type=str, default='./tissue_model/', help='Tissue direction')
 parser.add_argument('--seed', type=int, default=2, help='training seed')
 # Dataset Settings
 parser.add_argument('--data_root', type=str, default='/dataset/', help='dataset dir')
@@ -481,7 +480,7 @@ def mymain():
                     Low = torch.full((1, 7), min_data).squeeze()
 
                 op_noMax = pd.DataFrame(op_noMax)
-                name_op = '/home/l708/Code/NAS/EA3/Result/op_noMax' + str(Epoch + 1) + '.xlsx'
+                name_op = '/Result/op_noMax' + str(Epoch + 1) + '.xlsx'
                 op_noMax.to_excel(name_op, index=False)
                 M2M.p, f1min, f2min, M2M.Best_model = update_value(M2M, Train_data, evl, evl_data, M2M.Model._arch_parameters)
 
